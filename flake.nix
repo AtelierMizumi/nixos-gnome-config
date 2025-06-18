@@ -11,6 +11,8 @@
 
     nur.url = "github:nix-community/NUR";
 
+    nixcord.url = "github:kaylorben/nixcord";
+
     nix-gaming.url = "github:fufexan/nix-gaming";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";

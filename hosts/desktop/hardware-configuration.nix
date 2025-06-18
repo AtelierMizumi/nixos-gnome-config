@@ -21,6 +21,7 @@
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelParams = [ "acpi_backlight=video" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
