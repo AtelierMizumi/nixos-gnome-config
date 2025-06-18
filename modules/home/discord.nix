@@ -1,9 +1,12 @@
+{ inputs, ...}:
 {
+  imports = [ inputs.nixcord.homeModules.nixcord ];
+
   programs.nixcord = {
     enable = true;          # Enable Nixcord (It also installs Discord)
     vesktop.enable = true;  # Vesktop
     dorion.enable = true;   # Dorion
-    quickCss = "some CSS";  # quickCSS file
+    # quickCss = "some CSS";  # quickCSS file
     config = {
       useQuickCss = true;   # use out quickCSS
       themeLinks = [        # or use an online theme
@@ -16,7 +19,7 @@
           enable = true;
           ignorePlaying = true;
           ignoreWatching = true;
-          ignoredActivities = [ "someActivity" ];
+          # ignoredActivities = [ "someActivity" ];
         };
       };
     };
