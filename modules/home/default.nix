@@ -13,7 +13,7 @@
     ./nix-search/nix-search.nix       # TUI to search nixpkgs
     ./packages                        # other packages
     ./ssh.nix
-    ./vscodium                        # vscode fork
+    ./vscode                        # vscode fork
     ./xdg-mimes.nix                   # xdg config
   ];
 }
