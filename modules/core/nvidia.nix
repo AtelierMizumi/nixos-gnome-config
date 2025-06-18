@@ -21,10 +21,11 @@
         enable = true;
         enableOffloadCmd = true;
       };
-      # Check for correct busId
+      # Check for correct busId using the command below
+      # nix shell nixpkgs#pciutils -c lspci -d ::03xx
       # https://nixos.wiki/wiki/Nvidia#Enable_Unfree_Software_Repositories
-      intelBusId = "PCI:1:0:0";
-      nvidiaBusId = "PCI:0:2:0";
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
     };
 
     # Modesetting is required.
