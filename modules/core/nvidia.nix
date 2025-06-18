@@ -5,7 +5,7 @@
   # otherwise the X-server will be running permanently on nvidia,
   # thus keeping the GPU always on (see `nvidia-smi`).
   services.xserver.videoDrivers = [
-    "modesetting"  # example for Intel iGPU; use "amdgpu" here instead if your iGPU is AMD
+    "modesetting"
     "nvidia"
   ];
 
@@ -18,12 +18,23 @@
     ];
   };
 
+  environment.systemPackages = with pkgs; [
+    libva-utils
+    vdpauinfo
+    vulkan-tools
+    libvdpau-va-gl
+    egl-wayland
+    mesa
+  ];
+
   hardware.nvidia = {
     prime = {
-        offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
+      #   offload = {
+      #   enable = true;
+      #   enableOffloadCmd = true;
+      # };
+      
+      sync.enable = true;
       # Check for correct busId using the command below
       # nix shell nixpkgs#pciutils -c lspci -d ::03xx
       # https://nixos.wiki/wiki/Nvidia#Enable_Unfree_Software_Repositories
@@ -38,11 +49,11 @@
     # Enable this if you have graphical corruption issues or application crashes after waking
     # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
     # of just the bare essentials.
-    powerManagement.enable = false;
+    powerManagement.enable = true;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = true;
+    powerManagement.finegrained = false;
 
     # Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).

@@ -30,10 +30,9 @@
     ffmpeg
     killall
     openssl
-    pamixer                           # pulseaudio command line mixer
+    pamixer                   # pulseaudio command line mixer
     unzip
     wget
     xdg-utils
-    winetricks
   ];
 }

@@ -2,10 +2,13 @@
 {
   home.packages = with pkgs; [
     ## Utils
-    # Already defined elsewhere
-    # gamemode
+    gamemode
+    mangohud
+    goverlay
+    wine
     # gamescope
-    # winetricks
+    winetricks
+    protontricks
     # inputs.nix-gaming.packages.${pkgs.system}.wine-ge
 
     ## Minecraft

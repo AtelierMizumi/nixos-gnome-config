@@ -3,6 +3,8 @@
   # Add user to libvirtd group
   users.users.${username}.extraGroups = [ "libvirtd" ];
 
+  virtualisation.waydroid.enable = true;
+
   # Install necessary packages
   environment.systemPackages = with pkgs; [
     virt-manager

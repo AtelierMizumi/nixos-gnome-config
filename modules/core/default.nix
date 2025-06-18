@@ -10,6 +10,7 @@
     ./program.nix
     ./security.nix
     ./services.nix
+    ./nvidia.nix
     ./steam.nix
     ./system.nix
     ./flatpak.nix

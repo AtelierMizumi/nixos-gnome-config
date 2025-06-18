@@ -1,5 +1,21 @@
-{ pkgs, users, ... }:
+{ pkgs, ... }:
 {
+
+  nixpkgs.overlays = [
+    # GNOME 46: triple-buffering-v4-46
+    (final: prev: {
+      mutter = prev.mutter.overrideAttrs (old: {
+        src = pkgs.fetchFromGitLab  {
+          domain = "gitlab.gnome.org";
+          owner = "vanvugt";
+          repo = "mutter";
+          rev = "triple-buffering-v4-46";
+          hash = "sha256-C2VfW3ThPEZ37YkX7ejlyumLnWa9oij333d5c4yfZxc=";
+        };
+      });
+    })
+  ];
+
   services = {
     xserver = {
       enable = true;
@@ -18,22 +34,27 @@
 
   # Extension
   home-manager.users.thuanc177 = {
-    dconf = {
-      enable = true;
-      settings."org/gnome/shell" = {
-        disable-user-extensions = false;
-        enabled-extensions = with pkgs.gnomeExtensions; [
-          blur-my-shell.extensionUuid
-          gsconnect.extensionUuid
-        ];
-      };
-      # Prefer dark theme
-      settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-    };
-  };
+      dconf.settings = {
+        # ...
+        "org/gnome/shell" = {
+          disable-user-extensions = false;
 
-  # Background apps icon on bar
-  environment.systemPackages = with pkgs; [ gnomeExtensions.appindicator ];
+          # `gnome-extensions list` for a list
+          enabled-extensions = [
+            "user-theme@gnome-shell-extensions.gcampax.github.com"
+            "trayIconsReloaded@selfmade.pl"
+          ];
+        };
+    };
+
+    home.packages = with pkgs; [
+      gnomeExtensions.appindicator    
+      gnomeExtensions.user-themes
+      gnomeExtensions.wiggle
+      gnomeExtensions.blur-my-shell
+      gnomeExtensions.tray-icons-reloaded
+    ];
+  };
 
   # Exclude those programs I don't use
   environment.gnome.excludePackages = (with pkgs; [
