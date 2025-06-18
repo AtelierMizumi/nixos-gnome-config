@@ -10,6 +10,7 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
+  boot.kernelParams = [ "acpi_backlight=native" "module_blacklist=i915"];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 

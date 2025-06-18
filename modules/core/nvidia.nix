@@ -9,16 +9,16 @@
     "nvidia"
   ];
 
-  # Using the proprietery driver
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # For Broadwell (2014) or newer processors. LIBVA_DRIVER_NAME=iHD
+      # intel-vaapi-driver # For older processors. LIBVA_DRIVER_NAME=i965
+    ];
   };
 
   hardware.nvidia = {
-
     prime = {
         offload = {
         enable = true;
@@ -53,10 +53,10 @@
     open = false;
 
     # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
+	  # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # Production driver
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 }

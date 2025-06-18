@@ -13,6 +13,9 @@
     nvtopPackages.full
     zenith-nvidia
 
+    # vkcube
+    vulkan-tools
+
     ## Fun / screensaver
     cbonsai
     cmatrix

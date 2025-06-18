@@ -35,14 +35,14 @@
     in
     {
       nixosConfigurations = {
-        desktop = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [ ./hosts/desktop ];
-          specialArgs = {
-            host = "nixos";
-            inherit self inputs username;
-          };
-        };
+      #   desktop = nixpkgs.lib.nixosSystem {
+      #     inherit system;
+      #     modules = [ ./hosts/desktop ];
+      #     specialArgs = {
+      #       host = "nixos";
+      #       inherit self inputs username;
+      #     };
+      #   };
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ ./hosts/laptop ];
