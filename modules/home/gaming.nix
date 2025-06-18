@@ -1,7 +1,6 @@
 { pkgs, inputs, ... }:
 {
   home.packages = with pkgs; [
-     
     ## Utils
     # Already defined elsewhere
     # gamemode

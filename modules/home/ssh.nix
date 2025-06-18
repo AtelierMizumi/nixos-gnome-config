@@ -1,5 +1,10 @@
 { ... }:
 {
+  # Generate ssh key using this command
+  # ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_github -C "thuanc177@gmail.com"
+  # Then cat the generated key
+  # This keey can then be uploaded to your Github in SSH and GPG keys and be used to access Github
+
   programs.ssh = {
     enable = true;
 

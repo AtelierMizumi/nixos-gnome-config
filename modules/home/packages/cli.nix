@@ -10,7 +10,7 @@
     htop
     nitch                             # systhem fetch util
     wavemon                           # monitoring for wireless network devices
-    nvtopPackages
+    nvtopPackages.full
     zenith-nvidia
 
     ## Fun / screensaver
