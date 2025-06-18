@@ -11,7 +11,8 @@
       enable                = true;
       useOSProber           = true;
       copyKernels           = true;
-      efiInstallAsRemovable = true;
+      # Actually make Grub a seperate boot entry and not an option in systemd-boot
+      efiInstallAsRemovable = false;
       efiSupport            = true;
       fsIdentifier          = "label";
       devices               = [ "nodev" ];
