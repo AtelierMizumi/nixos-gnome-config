@@ -1,0 +1,18 @@
+{ ... }:
+{
+  imports = [                      # better cat command
+    ./browser.nix                     # firefox based browser
+    ./cava.nix                        # audio visualizer
+    ./discord.nix                     # discord
+    ./fastfetch.nix                   # fetch tool
+    ./gaming.nix                      # packages related to gaming
+    ./ghostty.nix                     # terminal
+    ./git.nix                         # version control
+    ./gtk.nix                         # gtk theme
+    ./kitty.nix                       # terminal
+    ./nix-search/nix-search.nix       # TUI to search nixpkgs
+    ./packages                        # other packages
+    ./vscodium                        # vscode fork
+    ./xdg-mimes.nix                   # xdg config
+  ];
+}

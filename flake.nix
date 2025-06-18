@@ -1,0 +1,54 @@
+{
+  description = "thuanc177's NixOS Flake configuration";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nur.url = "github:nix-community/NUR";
+
+    nix-gaming.url = "github:fufexan/nix-gaming";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    ghostty.url = "github:ghostty-org/ghostty";
+  };
+
+  outputs =
+    { nixpkgs, self, ... }@inputs:
+    let
+      username = "thuanc177";
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      lib = nixpkgs.lib;
+    in
+    {
+      nixosConfigurations = {
+        desktop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ ./hosts/desktop ];
+          specialArgs = {
+            host = "nixos";
+            inherit self inputs username;
+          };
+        };
+        laptop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ ./hosts/laptop ];
+          specialArgs = {
+            host = "nixos";
+            inherit self inputs username;
+          };
+        };
+      };
+    };
+}
