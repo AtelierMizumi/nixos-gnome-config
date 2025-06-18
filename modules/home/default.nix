@@ -12,7 +12,6 @@
     ./kitty.nix                       # terminal
     ./nix-search/nix-search.nix       # TUI to search nixpkgs
     ./packages                        # other packages
-    ./sleepy-launcher.nix
     ./ssh.nix
     ./vscodium                        # vscode fork
     ./xdg-mimes.nix                   # xdg config

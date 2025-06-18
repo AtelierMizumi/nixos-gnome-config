@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   services = {
     xserver = {
@@ -17,7 +17,7 @@
   };
 
   # Extension
-  home-manager.users.thuanc177 = {
+  home-manager.users.${username} = {
       dconf.settings = {
         # ...
         "org/gnome/shell" = {
