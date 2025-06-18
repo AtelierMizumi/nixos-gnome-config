@@ -28,18 +28,18 @@
       "workbench.editor.limit.enabled" = true;
       "workbench.editor.limit.value" = 10;
       "workbench.editor.limit.perEditorGroup" = true;
-      "workbench.editor.showTabs" = "none";
-      "files.autoSave" = "onWindowChange";
-      "explorer.openEditors.visible" = 0;
+      # "workbench.editor.showTabs" = "none";
+      # "files.autoSave" = "onWindowChange";
+      "explorer.openEditors.visible" = true;
       "breadcrumbs.enabled" = false;
       "editor.renderControlCharacters" = false;
-      "workbench.activityBar.location" = "hidden";
-      "workbench.statusBar.visible" = false;
+      # "workbench.activityBar.location" = "hidden";
+      # "workbench.statusBar.visible" = false;
       "editor.scrollbar.verticalScrollbarSize" = 2;
       "editor.scrollbar.horizontalScrollbarSize" = 2;
-      "editor.scrollbar.vertical" = "hidden";
+      # "editor.scrollbar.vertical" = "hidden";
       "editor.scrollbar.horizontal" = "hidden";
-      "workbench.layoutControl.enabled" = false;
+      # "workbench.layoutControl.enabled" = false;
 
       "editor.mouseWheelZoom" = true;
 
@@ -59,13 +59,17 @@
 
       "nix.serverPath" = "nixd";
       "nix.enableLanguageServer" = true;
-      # "nix.serverSettings" = {
-      #   "nixd" = {
-      #     "formatting" = {
-      #       "command" = [ "nixfmt" ];
-      #     };
-      #   };
-      # };
+      "nix.serverSettings" = {
+        "nixd" = {
+          "formatting" = {
+            "command" = [ "nixfmt" ];
+          };
+        };
+      };
+
+      "github.copilot.enable" = {
+        "*" = true;
+      };
     };
   };
 }

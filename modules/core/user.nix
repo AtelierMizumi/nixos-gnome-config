@@ -15,12 +15,20 @@
       imports = [ ./../home/default.nix ];
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
-      home.stateVersion = "24.05";
+      home.stateVersion = "25.11";
       programs.home-manager.enable = true;
     };
   };
 
   programs.fish.enable = true;
+
+  environment.shellAliases = {
+    l = "ls -lChs";
+    c = "clear";
+    disk = "lsblk -f";
+    ff = "fastfetch";
+    nit = "nitch";
+  };
 
   users.users.${username} = {
     isNormalUser = true;

@@ -19,6 +19,7 @@
   # Extension
   home-manager.users.${username} = {
       dconf.settings = {
+        "org/gnome/desktop/interface".color-scheme = "prefer-dark";
         # ...
         "org/gnome/shell" = {
           disable-user-extensions = false;
@@ -27,6 +28,11 @@
           enabled-extensions = [
             "user-theme@gnome-shell-extensions.gcampax.github.com"
             "trayIconsReloaded@selfmade.pl"
+            "appindicatorsupport@rgcjonas.gmail.com"
+            "blur-my-shell@aunetx"
+            "wiggle@mechtifs"
+            "auto-adwaita-colors@celiopy"
+            "just-perfection-desktop@just-perfection"
           ];
         };
     };
@@ -34,6 +40,9 @@
     home.packages = with pkgs; [
       gnomeExtensions.appindicator    
       gnomeExtensions.user-themes
+      gnomeExtensions.just-perfection
+      marble-shell-theme
+      gnomeExtensions.auto-adwaita-colors
       gnomeExtensions.wiggle
       gnomeExtensions.blur-my-shell
       gnomeExtensions.tray-icons-reloaded

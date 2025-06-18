@@ -17,9 +17,13 @@ in
       ## Languages
       jnoortheen.nix-ide
       arrterian.nix-env-selector
+      github.copilot
+      github.copilot-chat
+      github.vscode-pull-request-github
+      rust-lang.rust-analyzer
       # ms-python.python
       llvm-vs-code-extensions.vscode-clangd
-      ziglang.vscode-zig
+      # ziglang.vscode-zig
       tamasfe.even-better-toml
       golang.go
 
