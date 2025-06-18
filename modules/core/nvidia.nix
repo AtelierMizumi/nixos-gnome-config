@@ -9,6 +9,9 @@
     "nvidia"
   ];
 
+  # Using the proprietery driver
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
