@@ -43,10 +43,16 @@
         #   };
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/laptop ];
+          modules = [ ./hosts/${host} ];
           specialArgs = {
             host = "nixos";
-            inherit self inputs username;
+            inherit
+              self
+              inputs
+              username
+              github-username
+              github-email
+              ;
           };
         };
       };

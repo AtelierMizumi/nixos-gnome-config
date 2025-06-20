@@ -73,6 +73,7 @@
       "github.copilot.enable" = {
         "*" = true;
       };
+      "git.enableSmartCommit" = true;
     };
   };
 }
