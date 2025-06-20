@@ -21,11 +21,11 @@ in
     selection-invert-fg-bg = true
 
     # Theme
-    theme = "gruvbox"
-    background-opacity = 0.66
+    theme = "catppuccin-mocha"
+    background-opacity = 0.85
 
     cursor-style = bar
-    cursor-style-blink = false
+    cursor-style-blink = true
     adjust-cursor-thickness = 1
 
     resize-overlay = never
@@ -40,7 +40,7 @@ in
     window-padding-color = background
     window-inherit-working-directory = true
     window-inherit-font-size = true
-    window-decoration = false
+    # window-decoration = false
 
     gtk-titlebar = false
     gtk-single-instance = false
@@ -83,5 +83,33 @@ in
 
     selection-foreground = #282828
     selection-background = #98971A
+  '';
+
+  xdg.configFile."ghostty/themes/catppuccin-mocha".text = ''
+    background = #1e1e2e
+    foreground = #cdd6f4
+
+    palette = 0=#45475a
+    palette = 1=#f38ba8
+    palette = 2=#a6e3a1
+    palette = 3=#f9e2af
+    palette = 4=#89b4fa
+    palette = 5=#f5c2e7
+    palette = 6=#94e2d5
+    palette = 7=#bac2de
+
+    palette = 8=#585b70
+    palette = 9=#f38ba8
+    palette = 10=#a6e3a1
+    palette = 11=#f9e2af
+    palette = 12=#89b4fa
+    palette = 13=#f5c2e7
+    palette = 14=#94e2d5
+    palette = 15=#a6adc8
+
+    cursor-color = #f5e0dc
+
+    selection-foreground = #1e1e2e
+    selection-background = #f5e0dc
   '';
 }

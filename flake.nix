@@ -27,22 +27,20 @@
     let
       username = "thuanc177";
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      lib = nixpkgs.lib;
+      github-username = "AtelierMizumi";
+      github-email = "thuanc177@gmail.com";
+      host = "laptop"; # Change this to "desktop" if you want to use the desktop configuration
     in
     {
       nixosConfigurations = {
-      #   desktop = nixpkgs.lib.nixosSystem {
-      #     inherit system;
-      #     modules = [ ./hosts/desktop ];
-      #     specialArgs = {
-      #       host = "nixos";
-      #       inherit self inputs username;
-      #     };
-      #   };
+        #   desktop = nixpkgs.lib.nixosSystem {
+        #     inherit system;
+        #     modules = [ ./hosts/desktop ];
+        #     specialArgs = {
+        #       host = "nixos";
+        #       inherit self inputs username;
+        #     };
+        #   };
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ ./hosts/laptop ];

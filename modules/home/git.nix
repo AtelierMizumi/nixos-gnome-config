@@ -1,10 +1,16 @@
-{ pkgs, username, ... }:
+{
+  pkgs,
+  username,
+  github-email,
+  github-username,
+  ...
+}:
 {
   programs.git = {
     enable = true;
 
-    userName = "AtelierMizumi";
-    userEmail = "thuanc177@gmail.com";
+    userName = github-username;
+    userEmail = github-email;
 
     extraConfig = {
       init.defaultBranch = "main";
@@ -37,5 +43,6 @@
 
   xdg.configFile."git/.gitignore".text = ''
     .vscode
+    .idea
   '';
 }

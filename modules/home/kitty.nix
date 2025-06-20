@@ -1,7 +1,7 @@
 { host, ... }:
 {
   programs.kitty = {
-    enable = true;
+    enable = false;
 
     themeFile = "gruvbox-dark-hard";
 

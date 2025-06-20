@@ -1,5 +1,4 @@
-{ pkgs, username, ... }:
-{
+{ pkgs, username, ... }: {
   # Add user to libvirtd group
   users.users.${username}.extraGroups = [ "libvirtd" ];
 
@@ -14,7 +13,7 @@
     spice-protocol
     win-virtio
     win-spice
-    adwaita-icon-theme
+    whitesur-icon-theme
   ];
 
   # Manage the virtualisation services

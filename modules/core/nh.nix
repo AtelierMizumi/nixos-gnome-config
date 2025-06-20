@@ -1,5 +1,4 @@
-{ pkgs, username, ... }:
-{
+{ pkgs, username, ... }: {
   programs.nh = {
     enable = true;
     clean = {
@@ -12,5 +11,6 @@
   environment.systemPackages = with pkgs; [
     nix-output-monitor
     nvd
+    nixfmt-rfc-style
   ];
 }

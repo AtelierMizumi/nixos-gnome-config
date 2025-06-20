@@ -18,31 +18,29 @@
 
   # Extension
   home-manager.users.${username} = {
-      dconf.settings = {
-        "org/gnome/desktop/interface".color-scheme = "prefer-dark";
-        # ...
-        "org/gnome/shell" = {
-          disable-user-extensions = false;
+    dconf.settings = {
+      "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      # ...
+      "org/gnome/shell" = {
+        disable-user-extensions = false;
 
-          # `gnome-extensions list` for a list
-          enabled-extensions = [
-            "user-theme@gnome-shell-extensions.gcampax.github.com"
-            "trayIconsReloaded@selfmade.pl"
-            "appindicatorsupport@rgcjonas.gmail.com"
-            "blur-my-shell@aunetx"
-            "wiggle@mechtifs"
-            "auto-adwaita-colors@celiopy"
-            "just-perfection-desktop@just-perfection"
-          ];
-        };
+        # `gnome-extensions list` for a list
+        enabled-extensions = [
+          "user-theme@gnome-shell-extensions.gcampax.github.com"
+          "trayIconsReloaded@selfmade.pl"
+          "appindicatorsupport@rgcjonas.gmail.com"
+          "blur-my-shell@aunetx"
+          "wiggle@mechtifs"
+          "just-perfection-desktop@just-perfection"
+        ];
+      };
     };
 
     home.packages = with pkgs; [
-      gnomeExtensions.appindicator    
+      gnome-tweaks
+      gnomeExtensions.appindicator
       gnomeExtensions.user-themes
       gnomeExtensions.just-perfection
-      marble-shell-theme
-      gnomeExtensions.auto-adwaita-colors
       gnomeExtensions.wiggle
       gnomeExtensions.blur-my-shell
       gnomeExtensions.tray-icons-reloaded
@@ -50,21 +48,24 @@
   };
 
   # Exclude those programs I don't use
-  environment.gnome.excludePackages = (with pkgs; [
-    atomix # puzzle game
-    cheese # webcam tool
-    epiphany # web browser
-    evince # document viewer
-    geary # email reader
-    gedit # text editor
-    gnome-characters
-    gnome-music
-    gnome-photos
-    gnome-terminal
-    gnome-tour
-    hitori # sudoku game
-    iagno # go game
-    tali # poker game
-    totem # video player
-  ]);
+  environment.gnome.excludePackages = (
+    with pkgs;
+    [
+      atomix # puzzle game
+      cheese # webcam tool
+      epiphany # web browser
+      evince # document viewer
+      geary # email reader
+      gedit # text editor
+      gnome-characters
+      gnome-music
+      gnome-photos
+      gnome-terminal
+      gnome-tour
+      hitori # sudoku game
+      iagno # go game
+      tali # poker game
+      totem # video player
+    ]
+  );
 }
