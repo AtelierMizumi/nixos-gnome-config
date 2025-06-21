@@ -27,8 +27,8 @@
     let
       username = "thuanc177";
       system = "x86_64-linux";
-      github-username = "AtelierMizumi";
-      github-email = "thuanc177@gmail.com";
+      githubUsername = "AtelierMizumi";
+      githubEmail = "thuanc177@gmail.com";
       host = "laptop"; # Change this to "desktop" if you want to use the desktop configuration
     in
     {
@@ -50,8 +50,9 @@
               self
               inputs
               username
-              github-username
-              github-email
+              system
+              githubUsername
+              githubEmail
               ;
           };
         };

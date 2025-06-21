@@ -1,16 +1,16 @@
 {
   pkgs,
   username,
-  github-email,
-  github-username,
+  githubEmail,
+  githubUsername,
   ...
 }:
 {
   programs.git = {
     enable = true;
 
-    userName = "${github-username}";
-    userEmail = "${github-email}";
+    userName = "${githubUsername}";
+    userEmail = "${githubEmail}";
 
     extraConfig = {
       init.defaultBranch = "main";

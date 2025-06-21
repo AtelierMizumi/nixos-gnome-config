@@ -3,6 +3,8 @@
   inputs,
   username,
   host,
+  githubEmail,
+  githubUsername,
   ...
 }:
 {
@@ -10,7 +12,15 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs username host; };
+    extraSpecialArgs = {
+      inherit
+        inputs
+        username
+        host
+        githubEmail
+        githubUsername
+        ;
+    };
     users.${username} = {
       imports = [ ./../home/default.nix ];
       home.username = "${username}";
