@@ -6,7 +6,7 @@
     mangohud
     goverlay
     wine
-    # gamescope
+    gamescope
     winetricks
     protontricks
     # inputs.nix-gaming.packages.${pkgs.system}.wine-ge

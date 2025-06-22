@@ -40,9 +40,9 @@ in
     window-padding-color = background
     window-inherit-working-directory = true
     window-inherit-font-size = true
-    # window-decoration = false
+    window-decoration = true
 
-    gtk-titlebar = false
+    gtk-titlebar = true
     gtk-single-instance = false
     gtk-tabs-location = bottom
     gtk-wide-tabs = false
