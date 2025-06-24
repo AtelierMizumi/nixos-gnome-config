@@ -1,20 +1,23 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   fonts.fontconfig.enable = true;
-  home.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-code
-    nerd-fonts.caskaydia-cove
-    twemoji-color-font
-    noto-fonts-emoji
-    fantasque-sans-mono
-    maple-mono.truetype-autohint
-  ];
+  home.packages =
+    with pkgs;
+    [
+      nerd-fonts.jetbrains-mono
+      noto-fonts-emoji
+    ]
+    ++ (with inputs.apple-fonts.packages.${pkgs.system}; [
+      sf-pro-nerd
+      sf-mono-nerd
+      sf-compact-nerd
+      ny-nerd
+    ]);
 
   gtk = {
     enable = true;
     font = {
-      name = "Maple Mono";
+      name = "SFProDisplay Nerd Font";
       size = 12;
     };
     theme = {
