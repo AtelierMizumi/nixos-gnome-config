@@ -62,6 +62,7 @@
       gnome-photos
       gnome-terminal
       gnome-tour
+      gnome-weather
       hitori # sudoku game
       iagno # go game
       tali # poker game

@@ -103,5 +103,22 @@ in
   home.sessionVariables = {
     # prevent wine from creating file associations
     WINEDLLOVERRIDES = "winemenubuilder.exe=d";
+    # optimizations
+    # Wine optimizations
+    DXVK_ASYNC = "1";
+    WINE_FULLSCREEN_FSR = "1";
+    WINE_LARGE_ADDRESS_AWARE = "1";
+    vblank_mode = "0";
+    __GL_THREADED_OPTIMIZATIONS = "1";
+    mesa_glthread = "true";
+
+    # Proton optimizations
+    PROTON_HIDE_NVIDIA_GPU = "0";
+    PROTON_ENABLE_NVAPI = "1";
+    PROTON_FORCE_LARGE_ADDRESS_AWARE = "1";
+    PROTON_NO_ESYNC = "0";
+    PROTON_NO_FSYNC = "0";
+    PROTON_USE_WINED3D = "0";
+    STEAM_RUNTIME_HEAVY_PIN = "0";
   };
 }

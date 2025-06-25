@@ -40,6 +40,10 @@
     nit = "nitch";
   };
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
   users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
