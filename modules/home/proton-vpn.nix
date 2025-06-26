@@ -1,8 +1,4 @@
 { pkgs, ... }:
 {
-  home-manager.programs = {
-    protonvpn-gui = {
-      enable = true;
-    };
-  };
+  pkg.proton-vpn = with pkgs; [ protonvpn-gui ];
 }
