@@ -21,23 +21,28 @@
       size = 12;
     };
     theme = {
-      name = "Catppuccin";
+      name = "Catppuccin-GTK-Dark";
       package = pkgs.magnetic-catppuccin-gtk;
     };
     iconTheme = {
-      name = "Whitesur";
+      name = "WhiteSur-dark";
       package = pkgs.whitesur-icon-theme;
     };
     cursorTheme = {
       name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
+      package = pkgs.whitesur-cursors;
       size = 36;
     };
   };
 
+  # Making QT applications looks like GTK
+  # qt.enable = true;
+  # qt.platformTheme = "gnome";
+  # qt.style = "adwaita";
+
   home.pointerCursor = {
     name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
+    package = pkgs.whitesur-cursors;
     size = 36;
   };
 }
