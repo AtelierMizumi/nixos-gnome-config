@@ -2,14 +2,14 @@
 {
   home.packages = with pkgs; [
     ## Better core utils
-    ncdu                              # disk space
-    ripgrep                           # grep replacement
+    ncdu # disk space
+    ripgrep # grep replacement
     tldr
 
     ## Monitoring / fetch
     htop
-    nitch                             # systhem fetch util
-    wavemon                           # monitoring for wireless network devices
+    nitch # systhem fetch util
+    wavemon # monitoring for wireless network devices
     nvtopPackages.full
     zenith-nvidia
 
@@ -22,7 +22,6 @@
     fortune
 
     ## Multimedia
-    ani-cli
     mpv
 
     ## Utilities
@@ -30,7 +29,7 @@
     ffmpeg
     killall
     openssl
-    pamixer                   # pulseaudio command line mixer
+    pamixer # pulseaudio command line mixer
     unzip
     wget
     xdg-utils
